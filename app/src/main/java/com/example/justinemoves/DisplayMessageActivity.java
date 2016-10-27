@@ -1,4 +1,4 @@
-package com.example.myfirstapp;
+package com.example.justinemoves;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
