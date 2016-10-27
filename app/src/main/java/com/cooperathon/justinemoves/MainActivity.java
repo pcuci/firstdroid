@@ -1,4 +1,4 @@
-package com.example.justinemoves;
+package com.cooperathon.justinemoves;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        view = findViewById(R.id.textView);
+        setContentView(com.cooperation.justinemoves.R.layout.activity_main);
+        view = findViewById(com.cooperation.justinemoves.R.id.textView);
         view.setBackgroundColor(Color.GREEN);
 
         //TODO: 1. Call the service

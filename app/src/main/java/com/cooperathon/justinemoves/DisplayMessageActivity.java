@@ -1,4 +1,4 @@
-package com.example.justinemoves;
+package com.cooperathon.justinemoves;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +11,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_message);
+        setContentView(com.cooperation.justinemoves.R.layout.activity_display_message);
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
@@ -19,7 +19,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         textView.setTextSize(40);
         textView.setText(message);
 
-        ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display_message);
+        ViewGroup layout = (ViewGroup) findViewById(com.cooperation.justinemoves.R.id.activity_display_message);
         layout.addView(textView);
     }
 }
