@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cooperathon.justinemoves">
+<<<<<<< HEAD
 
+=======
+>>>>>>> c4cce84d738a789c76ae5f78e687946ee369b94d
     <uses-permission android:name="android.permission.VIBRATE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,16 +15,30 @@
         <activity android:name="com.cooperathon.justinemoves.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name="com.cooperathon.justinemoves.DisplayMessageActivity" />
 
+=======
+>>>>>>> c4cce84d738a789c76ae5f78e687946ee369b94d
         <service
             android:name="com.cooperathon.justinemoves.HapticService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true">
+        </service>
+        <service
+            android:name="com.cooperathon.justinemoves.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.cooperathon.justinemoves.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
-
 </manifest>

@@ -30,23 +30,18 @@ public class HapticService extends Service implements SensorEventListener {
     public HapticService() {
     }
 
-
     @Override
     public void onCreate() {
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Timer myTimer = new Timer();
-        myTimer.scheduleAtFixedRate(new Task(), START_TIME, RETRY_TIME);
-
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         lastUpdate = System.currentTimeMillis();
 
         sensorManager.registerListener(this,
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
-
 
         // For each start request, send a message to start a job and deliver the
         // start ID so we know which request we're stopping when we finish the job
@@ -73,7 +68,6 @@ public class HapticService extends Service implements SensorEventListener {
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
-
     }
 
     private void getAccelerometer(SensorEvent event) {
@@ -97,29 +91,13 @@ public class HapticService extends Service implements SensorEventListener {
         }
     }
 
-
-    public class Task extends TimerTask {
-
-        @Override
-        public void run() {
-
-            if (awayFromBaby) {
-                //TODO: GET REQUEST -> #2 Get Motion Status
-            }
-            Log.w("HAPTIC SERVICE", "going... and going... and");
-        }
-    }
-
     //TODO: Implement the callback -> When GET REQUEST returns motion status
     public void getMotionStatusCallback() {
         if( babyMoving ){
             triggerAlarm();
          }
-
         //TODO: Trigger a timed callback to probe for when the Alarm is acknowledged and a timer in case it is not acknowledged
     }
-
-
 
     public void triggerAlarm(){
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -128,7 +106,6 @@ public class HapticService extends Service implements SensorEventListener {
         Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
         r.play();
     }
-
 
     @Override
     public void onDestroy() {

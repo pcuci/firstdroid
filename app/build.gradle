@@ -4,7 +4,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.3"
     defaultConfig {
-        applicationId "com.example.myfirstapp"
+        applicationId "com.cooperathon.justinemoves"
         minSdkVersion 23
         targetSdkVersion 24
         versionCode 1
@@ -28,5 +28,10 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
     compile 'com.google.firebase:firebase-messaging:9.8.0'
+<<<<<<< HEAD
 
+=======
+>>>>>>> c4cce84d738a789c76ae5f78e687946ee369b94d
 }
+
+apply plugin: 'com.google.gms.google-services'
