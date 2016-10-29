@@ -1,4 +1,4 @@
-package com.example.justinemoves;
+package com.cooperathon.justinemoves;
 
 import org.junit.Test;
 
